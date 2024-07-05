@@ -1,0 +1,20 @@
+{
+  "addons": {
+    "@legUpSidekickBackup": {
+      "updates": [
+        {
+          "version": "0.9.9010",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9010.xpi"
+        },
+        {
+          "version": "0.9.9011",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9011.xpi"
+        },
+        {
+          "version": "0.9.9012",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9012.xpi"
+        }
+      ]
+    }
+  }
+}
