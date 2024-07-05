@@ -13,6 +13,10 @@
         {
           "version": "0.9.9012",
           "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9012.xpi"
+        },
+        {
+          "version": "0.9.9013",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9013.xpi"
         }
       ]
     }
