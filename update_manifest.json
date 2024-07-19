@@ -3,24 +3,16 @@
     "@legUpSidekickBackup": {
       "updates": [
         {
-          "version": "0.9.9010",
-          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9010.xpi"
-        },
-        {
-          "version": "0.9.9011",
-          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9011.xpi"
-        },
-        {
-          "version": "0.9.9012",
-          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9012.xpi"
-        },
-        {
           "version": "0.9.9013",
           "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9013.xpi"
         },
         {
           "version": "0.9.9014",
           "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9014.xpi"
+        },
+        {
+          "version": "0.9.9015",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-0.9.9015.xpi"
         }
       ]
     }
