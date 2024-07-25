@@ -5,6 +5,10 @@
         {
           "version": "9018.1002",
           "update_link": "https://github.com/legendary-upside/sidekick/raw/main/beta/legupsidekickbeta-9018.1002.xpi"
+        },
+        {
+          "version": "9022.1003",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/beta/legupsidekickbeta-9022.1003.xpi"
         }
       ]
     }
