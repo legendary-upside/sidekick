@@ -3,12 +3,12 @@
     "@legUpSidekickBeta": {
       "updates": [
         {
-          "version": "1.1.12.4",
-          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/beta/legupsidekickbeta-1.1.12.4.xpi"
-        },
-        {
           "version": "1.1.12.5",
           "update_link": "https://github.com/legendary-upside/sidekick/raw/main/beta/legupsidekickbeta-1.1.12.5.xpi"
+        },
+        {
+          "version": "1.1.12.6",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/beta/legupsidekickbeta-1.1.12.6.xpi"
         }
       ]
     }
