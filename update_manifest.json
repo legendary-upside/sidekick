@@ -3,10 +3,6 @@
     "@legUpSidekickBackup": {
       "updates": [
         {
-          "version": "1.3.36",
-          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-1.3.36.xpi"
-        },
-        {
           "version": "1.3.37",
           "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-1.3.37.xpi"
         },
