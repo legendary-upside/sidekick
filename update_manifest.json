@@ -3,12 +3,12 @@
     "@legUpSidekickBackup": {
       "updates": [
         {
-          "version": "1.9.43",
-          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-1.9.43-firefox.xpi"
-        },
-        {
           "version": "1.9.44",
           "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-1.9.44-firefox.xpi"
+        },
+        {
+          "version": "1.9.45",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-1.9.45-firefox.xpi"
         }
       ]
     }
