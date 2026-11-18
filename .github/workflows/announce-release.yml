@@ -1,14 +1,20 @@
 name: announce release
 
 # release.sh replaces main with a single "prod <version> release" commit. That push posts the
-# release to Discord. Other pushes do nothing; "Run workflow" posts the current release again.
+# release to Discord and deletes the previous release post. Other pushes do nothing; "Run
+# workflow" posts the current release again.
+#
+# The ids of the posts still in the channel live in message_ids on the announce-state branch
+# (a webhook cannot look up its old posts), which is why this needs contents: write.
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency: announce-release
 
 jobs:
   discord:
@@ -16,7 +22,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Load previous post ids
+        run: |
+          state="$RUNNER_TEMP/message_ids"
+          : > "$state"
+          if git fetch --quiet origin announce-state 2>/dev/null; then
+            git show FETCH_HEAD:message_ids > "$state"
+          fi
+          cp "$state" "$state.loaded"
+          echo "ANNOUNCE_STATE_FILE=$state" >> "$GITHUB_ENV"
       - name: Post to Discord
         env:
           DISCORD_RELEASE_WEBHOOK_URL: ${{ secrets.DISCORD_RELEASE_WEBHOOK_URL }}
         run: ./announce_release.sh
+      - name: Save post ids
+        if: always()
+        run: |
+          [[ -n "${ANNOUNCE_STATE_FILE:-}" && -f "$ANNOUNCE_STATE_FILE" ]] || exit 0
+          cmp --silent "$ANNOUNCE_STATE_FILE" "$ANNOUNCE_STATE_FILE.loaded" && exit 0
+          blob="$(git hash-object -w "$ANNOUNCE_STATE_FILE")"
+          tree="$(printf '100644 blob %s\tmessage_ids\n' "$blob" | git mktree)"
+          commit="$(git -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit-tree "$tree" -m 'release post ids')"
+          git push --quiet --force origin "$commit:refs/heads/announce-state"
