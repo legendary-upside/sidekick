@@ -1,0 +1,22 @@
+name: announce release
+
+# release.sh replaces main with a single "prod <version> release" commit. That push posts the
+# release to Discord. Other pushes do nothing; "Run workflow" posts the current release again.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discord:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'prod ')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post to Discord
+        env:
+          DISCORD_RELEASE_WEBHOOK_URL: ${{ secrets.DISCORD_RELEASE_WEBHOOK_URL }}
+        run: ./announce_release.sh
