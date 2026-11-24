@@ -1,0 +1,20 @@
+{
+  "addons": {
+    "@legUpSidekickBackup": {
+      "updates": [
+        {
+          "version": "2.4.3",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-2.4.3-firefox.xpi"
+        }
+      ]
+    },
+    "chrome": {
+      "updates": [
+        {
+          "version": "2.4.3",
+          "update_link": "https://github.com/legendary-upside/sidekick/raw/main/legupsidekick-2.4.3-chrome.zip"
+        }
+      ]
+    }
+  }
+}
